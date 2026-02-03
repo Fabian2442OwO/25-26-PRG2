@@ -4,7 +4,7 @@ Repo de materiales y proyectos de la asignatura **Programación II** del [Grado 
 
 ## Curso [25][26]
 
-- [Temario](temario/README.md)
+- [Temario](https://github.com/mmasias/PRG2)
   - [A día de hoy, deberíamos saber...](temario/aDiaDeHoy.md)
   - [Casos de uso](temario/casosDeUso/README.md)
   - [Ejercicios](temario/ejercicios/README.md)
