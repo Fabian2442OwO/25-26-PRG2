@@ -40,7 +40,7 @@ public class Edlin {
 
         } while (opcion != 'S');
     }
-    
+
      static void mostrarTexto() {
         System.out.println("\n---------------------------------");
         for (int i = 0; i < MAX_LINEAS; i++) {
@@ -52,5 +52,27 @@ public class Edlin {
         }
         System.out.println("---------------------------------");
     }
+
+    static void mostrarMenu() {
+        System.out.println("\nComandos:");
+        System.out.println("[L] Línea activa");
+        System.out.println("[E] Editar línea activa");
+        System.out.println("[I] Intercambiar líneas");
+        System.out.println("[B] Borrar línea activa");
+        System.out.println("[S] Salir");
+        System.out.print("Opción: ");
+    }
+
+    static void cambiarLineaActiva() {
+        System.out.print("Nueva línea activa (0-9): ");
+        int nueva = Integer.parseInt(sc.nextLine());
+
+        if (nueva >= 0 && nueva < MAX_LINEAS) {
+            lineaActiva = nueva;
+        } else {
+            System.out.println("Línea no válida");
+        }
+    }
+
 
 
