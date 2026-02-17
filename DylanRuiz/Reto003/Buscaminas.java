@@ -24,3 +24,52 @@ public class Buscaminas {
         colocarMinas(tablero, random);
 
         System.out.println("===== BUSCAMINAS =====");
+
+        while (!salida) {
+
+            imprimirTablero(tableroVisible);
+
+            System.out.print("Introduce fila (0-" + (FILAS - 1) + "): ");
+            int fila = sc.nextInt();
+
+            System.out.print("Introduce columna (0-" + (COLUMNAS - 1) + "): ");
+            int columna = sc.nextInt();
+
+            // Validar rango
+            if (fila < 0 || fila >= FILAS || columna < 0 || columna >= COLUMNAS) {
+                System.out.println("Posición inválida.\n");
+                continue;
+            }
+
+            // Evitar repetir jugadas
+            if (!tableroVisible[fila][columna].equals("  ")) {
+                System.out.println("Esa celda ya fue seleccionada.\n");
+                continue;
+            }
+
+            if (tablero[fila][columna].equals("MM")) {
+                tableroVisible[fila][columna] = "MM";
+                minasEncontradas++;
+                System.out.println("Has encontrado una mina!\n");
+            } else {
+                tableroVisible[fila][columna] = "--";
+                celdasDescubiertas++;
+            }
+
+            // Condiciones de fin
+            if (minasEncontradas >= MINAS_PARA_PERDER) {
+                System.out.println("Lo siento, has perdido.");
+                mostrarTableroCompleto(tablero);
+                salida = true;
+            }
+
+            if (celdasDescubiertas == (FILAS * COLUMNAS - MINAS_TOTALES)) {
+                System.out.println("¡Enhorabuena, has ganado!");
+                salida = true;
+            }
+        }
+
+        sc.close();
+    }
+
+    
