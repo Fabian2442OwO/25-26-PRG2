@@ -72,4 +72,25 @@ public class Buscaminas {
         sc.close();
     }
 
-    
+    public static void inicializarTableros(String[][] tablero, String[][] tableroVisible) {
+        for (int i = 0; i < FILAS; i++) {
+            for (int j = 0; j < COLUMNAS; j++) {
+                tablero[i][j] = "  ";
+                tableroVisible[i][j] = "  ";
+            }
+        }
+    }
+
+    public static void colocarMinas(String[][] tablero, Random random) {
+        int minasColocadas = 0;
+
+        while (minasColocadas < MINAS_TOTALES) {
+            int fila = random.nextInt(FILAS);
+            int columna = random.nextInt(COLUMNAS);
+
+            if (!tablero[fila][columna].equals("MM")) {
+                tablero[fila][columna] = "MM";
+                minasColocadas++;
+            }
+        }
+    }
