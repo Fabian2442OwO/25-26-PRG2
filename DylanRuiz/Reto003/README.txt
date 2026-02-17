@@ -1,0 +1,3 @@
+Para este Reto003 decidí crear un proyecto propio de buscaminas, llegue a esta conclusion debido a que los códigos proporcionados me parecían complejos y la interfaz no era de mi agrado, al final era mas trabajo Refactorizar los proyectos proporcionados que crear uno propio desde 0,
+
+El resultado a sido de mi agrado un código que yo entiendo y una interfaz dinámica y lejible, para la realziacion de este proyecto se utilizaron varios métodos, funciones, matrice principalmente para armar los tablero y aleatorizar las minas y de esta manera concluir con un proyecto lejible
